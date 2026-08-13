@@ -17,8 +17,8 @@
     <meta property="og:image" content="/assets/album-cover.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/assets/album-cover.png" />
-    <link rel="preload" href="/assets/generated/psychedelic-night.webp" as="image" type="image/webp" />
     <link rel="preload" href="/assets/album-cover.png" as="image" />
+    <script>document.documentElement.classList.add("js");</script>
     <link rel="stylesheet" href="/styles.css" />
     <title>BRAZA — Baile Cítrico Utrópico Lunar</title>
   </head>
@@ -31,12 +31,15 @@
 
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="BRAZA — voltar ao início">
-        <img src="/assets/braza-logo.png" alt="BRAZA" width="370" height="88" />
+        <img src="/assets/braza-logo-cutout.png" alt="BRAZA" width="580" height="144" />
       </a>
-      <a class="header-cta magnetic" href="#ouvir">
-        <span>Pré-save</span>
-        <span aria-hidden="true">↘</span>
-      </a>
+      <nav class="header-nav" aria-label="Navegação principal">
+        <a class="header-nav-link" href="#agenda">Agenda</a>
+        <a class="header-cta magnetic" href="#ouvir">
+          <span>Pré-save</span>
+          <span aria-hidden="true">↘</span>
+        </a>
+      </nav>
     </header>
 
     <main id="conteudo">
@@ -113,6 +116,7 @@
               alt="Capa do álbum Baile Cítrico Utrópico Lunar, do BRAZA"
               width="398"
               height="398"
+              fetchpriority="high"
             />
             <span class="cover-corner cover-corner-bottom" aria-hidden="true"></span>
           </div>
@@ -195,6 +199,88 @@
         </div>
       </section>
 
+      <section class="agenda-section" id="agenda" aria-labelledby="titulo-agenda">
+        <header class="agenda-heading reveal">
+          <p class="section-index">02 / AGENDA</p>
+          <h2 id="titulo-agenda">Próximos<br /><em>rituais.</em></h2>
+          <p>
+            O baile sai da órbita e encontra a cidade. Confira a próxima data
+            confirmada e garanta sua entrada pelos canais oficiais.
+          </p>
+        </header>
+
+        <div class="show-list">
+          <article class="show-card reveal" data-delay="100">
+            <time class="show-date" datetime="2026-09-26">
+              <strong>26</strong>
+              <span>SET · SÁB</span>
+            </time>
+            <div class="show-info">
+              <p>Sorocaba / Votorantim · SP</p>
+              <h3>Lobofest na Cidade 2026</h3>
+              <p>BRAZA · Maglore · O Grilo · Dingo</p>
+              <span>Abertura 15h · horário do BRAZA em breve</span>
+            </div>
+            <div class="show-actions">
+              <a
+                class="show-link"
+                href="https://shotgun.live/pt-br/events/iguatemi-apresenta-lobofest-na-cidade-setembro"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ingressos <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="show-source"
+                href="https://lobotomiafest.com.br/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver festival <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="agenda-card reveal" data-delay="170">
+            <div class="agenda-signal" aria-hidden="true">
+              <span>Radar aberto</span>
+              <strong>+<br />DATAS</strong>
+            </div>
+            <div class="agenda-copy">
+              <p class="agenda-status"><span aria-hidden="true"></span> Em atualização</p>
+              <h3>Mais cidades entram na roda.</h3>
+              <p>
+                Acompanhe a agenda oficial e ative os alertas para receber as
+                próximas datas assim que o BRAZA anunciar.
+              </p>
+            </div>
+            <div class="agenda-actions">
+              <a
+                class="show-link"
+                href="https://linktr.ee/onbraza"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agenda oficial <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="show-link show-link-secondary"
+                href="https://www.bandsintown.com/a/502621-braza"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ativar alertas <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <p class="agenda-updated">
+          Agenda consultada em <time datetime="2026-08-13">13.08.2026</time> ·
+          anúncio da banda + site oficial do festival
+        </p>
+      </section>
+
       <section class="release-section" aria-labelledby="titulo-versao">
         <div class="release-visual reveal">
           <div class="vinyl" aria-hidden="true">
@@ -207,7 +293,7 @@
         </div>
 
         <div class="release-copy reveal" data-delay="120">
-          <p class="section-index">02 / A VERSÃO</p>
+          <p class="section-index">03 / A VERSÃO</p>
           <h2 id="titulo-versao">O sol se põe.<br /><em>O baile continua.</em></h2>
           <p class="release-intro">
             Um ano depois de <cite>Baile Cítrico Utrópico Solar</cite>, a celebração
@@ -254,10 +340,11 @@
 
     <footer>
       <a class="footer-brand" href="#inicio" aria-label="BRAZA — voltar ao início">
-        <img src="/assets/braza-logo.png" alt="BRAZA" width="370" height="88" />
+        <img src="/assets/braza-logo-cutout.png" alt="BRAZA" width="580" height="144" />
       </a>
       <p>Baile Cítrico Utrópico Lunar · 21.08.2026</p>
       <div class="footer-links">
+        <a href="#agenda">Agenda</a>
         <a href="https://www.instagram.com/onbraza/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
         <a href="https://www.onbraza.com/" target="_blank" rel="noopener noreferrer">Site oficial ↗</a>
       </div>

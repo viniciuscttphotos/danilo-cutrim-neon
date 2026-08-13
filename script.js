@@ -14,6 +14,7 @@ document.querySelectorAll("[data-platform]").forEach((link) => {
 });
 
 const countdown = document.querySelector("[data-countdown]");
+let countdownTimer;
 
 function updateCountdown() {
   if (!countdown) return;
@@ -33,10 +34,17 @@ function updateCountdown() {
   });
 
   countdown.classList.toggle("is-live", remaining === 0);
+
+  if (remaining === 0 && countdownTimer) {
+    window.clearInterval(countdownTimer);
+    countdownTimer = undefined;
+  }
 }
 
 updateCountdown();
-setInterval(updateCountdown, 1_000);
+if (countdown && new Date(countdown.dataset.countdown).getTime() > Date.now()) {
+  countdownTimer = window.setInterval(updateCountdown, 1_000);
+}
 
 document.querySelectorAll("[data-delay]").forEach((element) => {
   element.style.setProperty("--delay", `${element.dataset.delay}ms`);
@@ -54,7 +62,7 @@ if ("IntersectionObserver" in window && !reducedMotion.matches) {
         }
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -5%" },
+    { threshold: 0.02, rootMargin: "0px 0px 18%" },
   );
 
   reveals.forEach((element) => observer.observe(element));
@@ -74,8 +82,21 @@ function updatePointer(event) {
   root.style.setProperty("--bg-y", `${normalizedY * -14}px`);
 }
 
+let pointerFrame = 0;
+let latestPointerEvent;
+
+function queuePointerUpdate(event) {
+  latestPointerEvent = event;
+  if (pointerFrame) return;
+
+  pointerFrame = window.requestAnimationFrame(() => {
+    updatePointer(latestPointerEvent);
+    pointerFrame = 0;
+  });
+}
+
 if (!reducedMotion.matches && window.matchMedia("(pointer: fine)").matches) {
-  window.addEventListener("pointermove", updatePointer, { passive: true });
+  window.addEventListener("pointermove", queuePointerUpdate, { passive: true });
 
   document.querySelectorAll(".magnetic").forEach((element) => {
     element.addEventListener("pointermove", (event) => {
@@ -90,13 +111,3 @@ if (!reducedMotion.matches && window.matchMedia("(pointer: fine)").matches) {
     });
   });
 }
-
-window.addEventListener(
-  "scroll",
-  () => {
-    if (reducedMotion.matches) return;
-    const travel = Math.min(window.scrollY * 0.08, 48);
-    root.style.setProperty("--scroll-shift", `${travel}px`);
-  },
-  { passive: true },
-);
