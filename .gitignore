@@ -5,3 +5,4 @@ dist
 *.log
 assets/source/
 Captura de Tela*.png
+.env*

@@ -1,0 +1,7 @@
+.git
+.vercel
+.env*
+assets/source
+Captura de Tela*.png
+AGENTS.md
+README.md
