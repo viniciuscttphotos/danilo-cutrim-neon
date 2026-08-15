@@ -50,8 +50,10 @@ O navegador carrega `index.html`, que referencia `styles.css`, os ativos locais 
 - YouTube: canal `@danilocutrim`.
 - Instagram: perfil `@danilo_cutrim`.
 - Agenda: Meaple/Casa Rockambole e Sympla/Dolores Club.
-- Hospedagem prevista na Vercel por meio da CLI.
-- Operações de repositório previstas por meio da GitHub CLI.
+- Repositório: `https://github.com/viniciuscttphotos/danilo-cutrim-neon`.
+- Produção: `https://danilo-cutrim-neon.vercel.app/`.
+- O projeto Vercel `danilo-cutrim-neon` está conectado ao repositório GitHub de mesmo nome.
+- O remote Git `origin` aponta para o repositório de Danilo Cutrim; o molde anterior foi preservado como `template-origin`.
 - A pasta local `.vercel/` e credenciais de publicação não devem ser versionadas.
 
 ## Dependências

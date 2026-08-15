@@ -18,3 +18,10 @@
 - **Bug corrigido:** imagens com atributos intrínsecos de altura podiam conservar 1000 px no layout mobile; `height: auto` passou a assegurar proporção responsiva correta.
 - **Segurança do repositório:** `.vercel/`, arquivos `.env*` e `.DS_Store` foram adicionados ao `.gitignore` para impedir o versionamento de credenciais e estado local.
 - **Validação:** JavaScript verificado com `node --check`; ausência de overflow horizontal conferida em 375 px e 1425 px; hero, plataformas e animações revisados no navegador; capa carregada com 1000 × 1000 px.
+
+## 2026-08-15 — Versionamento e publicação
+
+- **Arquivos revisados:** `.gitignore`, `progress.md` e `techinical_referrence.md`.
+- **O que foi feito:** criado e conectado o repositório público `viniciuscttphotos/danilo-cutrim-neon`; criado o projeto Vercel `danilo-cutrim-neon`, conectado ao GitHub e publicado em produção.
+- **Finalidade:** disponibilizar o link bio em infraestrutura própria, com deploy reproduzível pelas CLIs solicitadas.
+- **Validação em produção:** título, CTA do Deezer, capa em alta resolução, ausência de erros de console e ausência de overflow horizontal confirmados em `https://danilo-cutrim-neon.vercel.app/` no viewport móvel de 375 px.
