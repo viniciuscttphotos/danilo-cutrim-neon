@@ -1,8 +1,5 @@
+.vercel/
 .DS_Store
-.vercel
-node_modules
-dist
-*.log
-assets/source/
-Captura de Tela*.png
-.env*
+.env
+.env.*
+!.env.example
