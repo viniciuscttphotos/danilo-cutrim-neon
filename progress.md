@@ -38,3 +38,13 @@
 - **Compatibilidade:** interface e painel seguem a abordagem mobile first, com campos adequados a toque, rótulos acessíveis, mensagens de estado e aprimoramento para telas maiores.
 - **Validação:** sintaxe dos scripts e funções aprovada; validações de dados testadas; leitura pública, login válido, recusa de senha incorreta, criação persistente e exclusão foram exercitados no ambiente local da Vercel; os registros temporários de teste foram removidos.
 - **Publicação:** build aprovado e versão publicada em produção; página inicial, `/admin`, API pública da agenda e login válido responderam corretamente em `https://danilo-cutrim-neon.vercel.app/`, com dois compromissos reais preservados.
+
+## 2026-08-17 — Correção responsiva do título do painel
+
+- **Arquivo alterado:** `styles.css`.
+- **Trechos afetados:** título “Próximos shows”, grade principal do painel, cabeçalho do formulário, cartões da agenda administrativa e breakpoints responsivos.
+- **O que foi feito:** reduzida a escala tipográfica do título; adicionadas contenções de largura para colunas, cartões e campos; mantidos cabeçalho e cartões administrativos em uma coluna nas telas pequenas; a composição lateral passou a ser ativada apenas a partir de `56rem`, quando há espaço real para as duas colunas.
+- **Por que:** no breakpoint anterior de `40rem`, as larguras mínimas das duas colunas e do espaçamento excediam a área útil e faziam o título invadir o quadro lateral.
+- **Finalidade:** assegurar um painel genuinamente mobile first, sem sobreposição horizontal, preservando a hierarquia visual em celulares, tablets e desktops.
+- **Validação visual:** em 360 px e 768 px, painel confirmado em coluna única e sem rolagem horizontal; em 1024 px, título e formulário permaneceram em colunas independentes com aproximadamente 61 px de separação.
+- **Publicação:** build aprovado e correção implantada no endereço de produção `https://danilo-cutrim-neon.vercel.app/admin`.

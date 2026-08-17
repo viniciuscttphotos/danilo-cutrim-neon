@@ -37,6 +37,7 @@ O navegador carrega `index.html`, que referencia `styles.css`, os ativos locais 
 - Manifesto editorial que contextualiza a sonoridade dançante, MPB/soul e influência de timbres dos anos 80.
 - Agenda dinâmica, ordenada por data e horário, com link de ingresso e estado vazio acessível.
 - Painel `/admin` com autenticação, cadastro de Data, Local, Horário e Link do ingresso, listagem e exclusão.
+- Painel mobile first em coluna única para celulares e tablets compactos; a composição lateral do título e formulário é habilitada somente a partir de `56rem`, com tipografia limitada pela largura disponível.
 - Instagram, YouTube e Spotify oficiais no rodapé.
 - Animações por `IntersectionObserver`, halo de ponteiro, inclinação de capas e botões magnéticos.
 - Compartilhamento pela Web Share API, com cópia para a área de transferência como alternativa.
