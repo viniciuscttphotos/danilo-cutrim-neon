@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#090609" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="/assets/neon-cover.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Área do artista — Danilo Cutrim</title>
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <div class="page-glow" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header admin-header">
+      <a class="monogram" href="/" aria-label="Voltar ao site de Danilo Cutrim">DC<span>.</span></a>
+      <p class="header-label">área do artista</p>
+      <a class="header-link" href="/">Ver site <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="admin-main" id="conteudo">
+      <section class="admin-intro" aria-labelledby="titulo-painel">
+        <p class="section-kicker">AGENDA / PAINEL</p>
+        <h1 id="titulo-painel">Próximos<br /><em>shows.</em></h1>
+        <p>Cadastre uma apresentação e ela aparecerá automaticamente na agenda do site.</p>
+      </section>
+
+      <section class="admin-card" data-login-panel aria-labelledby="titulo-login">
+        <p class="admin-eyebrow">Acesso restrito</p>
+        <h2 id="titulo-login">Entrar no painel</h2>
+        <form class="admin-form" data-login-form>
+          <label>
+            <span>Usuário</span>
+            <input name="username" type="text" autocomplete="username" required />
+          </label>
+          <label>
+            <span>Senha</span>
+            <input name="password" type="password" autocomplete="current-password" required />
+          </label>
+          <button class="admin-submit" type="submit">Entrar <span aria-hidden="true">→</span></button>
+          <p class="form-status" data-login-status role="status"></p>
+        </form>
+      </section>
+
+      <section class="admin-dashboard" data-dashboard hidden aria-labelledby="titulo-cadastro">
+        <div class="admin-card">
+          <div class="admin-card-heading">
+            <div>
+              <p class="admin-eyebrow">Novo compromisso</p>
+              <h2 id="titulo-cadastro">Cadastrar agenda</h2>
+            </div>
+            <button class="admin-logout" type="button" data-logout>Sair</button>
+          </div>
+
+          <form class="admin-form agenda-form" data-agenda-form>
+            <label>
+              <span>Data</span>
+              <input name="date" type="date" required />
+            </label>
+            <label>
+              <span>Local</span>
+              <input name="venue" type="text" maxlength="120" placeholder="Ex.: Casa Rockambole — São Paulo, SP" required />
+            </label>
+            <label>
+              <span>Horário</span>
+              <input name="time" type="time" required />
+            </label>
+            <label>
+              <span>Link do ingresso</span>
+              <input name="ticketUrl" type="url" maxlength="2048" placeholder="https://…" required />
+            </label>
+            <button class="admin-submit" type="submit">Publicar na agenda <span aria-hidden="true">→</span></button>
+            <p class="form-status" data-agenda-status role="status"></p>
+          </form>
+        </div>
+
+        <div class="admin-list-section">
+          <p class="admin-eyebrow">Agenda publicada</p>
+          <div class="admin-event-list" data-admin-events aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/admin.js" defer></script>
+  </body>
+</html>

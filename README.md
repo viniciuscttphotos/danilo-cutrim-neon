@@ -6,17 +6,24 @@ Link bio oficial com ênfase no álbum **Neon**, lançado em 13 de agosto de 202
 
 - acesso ao álbum no Deezer e aos perfis oficiais de streaming;
 - tracklist completa com links por faixa;
-- datas de shows em São Paulo e no Rio de Janeiro;
+- agenda de shows atualizada pelo painel do artista;
 - Instagram, YouTube e Spotify oficiais.
+
+## Painel da agenda
+
+O acesso fica em `/admin` e permite cadastrar Data, Local, Horário e Link do ingresso, além de excluir compromissos publicados. As credenciais e a chave de sessão ficam nas variáveis protegidas da Vercel; a agenda é persistida em um Vercel Blob privado e exibida automaticamente na página pública.
+
+Para desenvolvimento local, copie as chaves de `.env.example` para `.env.local` e preencha os valores. Nunca versione credenciais.
 
 ## Desenvolvimento local
 
-O projeto usa HTML, CSS e JavaScript puros. Sirva a pasta com qualquer servidor HTTP estático, por exemplo:
+Instale a dependência e execute o ambiente local da Vercel para incluir as funções da agenda:
 
 ```sh
-python3 -m http.server 4173
+npm install
+vercel dev
 ```
 
 ## Publicação
 
-O projeto é versionado no GitHub e publicado pela Vercel CLI. A pasta `.vercel/` e credenciais locais nunca devem ser commitidas.
+O projeto é versionado no GitHub e publicado pela Vercel CLI. As pastas `.vercel/` e `node_modules/`, além das credenciais locais, nunca devem ser commitidas.

@@ -25,3 +25,16 @@
 - **O que foi feito:** criado e conectado o repositório público `viniciuscttphotos/danilo-cutrim-neon`; criado o projeto Vercel `danilo-cutrim-neon`, conectado ao GitHub e publicado em produção.
 - **Finalidade:** disponibilizar o link bio em infraestrutura própria, com deploy reproduzível pelas CLIs solicitadas.
 - **Validação em produção:** título, CTA do Deezer, capa em alta resolução, ausência de erros de console e ausência de overflow horizontal confirmados em `https://danilo-cutrim-neon.vercel.app/` no viewport móvel de 375 px.
+
+## 2026-08-17 — Painel persistente para a agenda do artista
+
+- **Arquivos alterados:** `index.html`, `script.js`, `styles.css`, `vercel.json`, `.gitignore`, `README.md`, `package.json`, `package-lock.json` e `.env.example`.
+- **Arquivos criados:** `admin.html`, `admin.js`, `api/session.js`, `api/agenda.js`, `lib/auth.js` e `lib/agenda-store.js`.
+- **Trechos afetados:** seção pública de agenda, rodapé, painel administrativo, autenticação, API de compromissos, persistência, configuração da Vercel e documentação de operação.
+- **O que foi feito:** a agenda fixa foi substituída por uma lista dinâmica; foi criado um acesso discreto “Área do artista” no rodapé; o painel `/admin` recebeu login, formulário com Data, Local, Horário e Link do ingresso, listagem e exclusão de compromissos; as gravações passam por uma função autenticada e são salvas em armazenamento privado.
+- **Por que:** permitir que o próprio artista publique novos shows sem editar o HTML ou depender do navegador em que o cadastro foi realizado.
+- **Finalidade:** manter a agenda pública compartilhada e atualizada para todos os visitantes, com credenciais e dados de sessão fora do código enviado ao navegador.
+- **Segurança:** sessão assinada em cookie `HttpOnly`, `SameSite=Strict` e `Secure` em produção; comparação de credenciais no servidor; validação de origem e dos quatro campos; bloqueio de protocolos não HTTP(S); armazenamento privado conectado ao projeto; segredos configurados como variáveis sensíveis da Vercel.
+- **Compatibilidade:** interface e painel seguem a abordagem mobile first, com campos adequados a toque, rótulos acessíveis, mensagens de estado e aprimoramento para telas maiores.
+- **Validação:** sintaxe dos scripts e funções aprovada; validações de dados testadas; leitura pública, login válido, recusa de senha incorreta, criação persistente e exclusão foram exercitados no ambiente local da Vercel; os registros temporários de teste foram removidos.
+- **Publicação:** build aprovado e versão publicada em produção; página inicial, `/admin`, API pública da agenda e login válido responderam corretamente em `https://danilo-cutrim-neon.vercel.app/`, com dois compromissos reais preservados.
